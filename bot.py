@@ -237,6 +237,7 @@ def build_and_send_digest():
 
 
 def main():
+    global TELEGRAM_CHAT_ID
     log.info("Бот запущен.")
 
     if not TELEGRAM_CHAT_ID:
@@ -246,7 +247,6 @@ def main():
             chat_id = poll_for_chat_id()
             if not chat_id:
                 time.sleep(5)
-        global TELEGRAM_CHAT_ID
         TELEGRAM_CHAT_ID = chat_id
 
     last_sent_date = None
